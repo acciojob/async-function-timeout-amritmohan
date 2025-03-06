@@ -16,18 +16,19 @@ document.addEventListener("DOMContentLoaded", function () {
         const message = textInput.value.trim();
         const delay = parseInt(delayInput.value, 10);
 
-        //validating input
+        // validating input
         if (!message) {
-            output.innerText = "Please enter a message.";
+            output.innerText = "";
             return;
         }
         if (isNaN(delay) || delay < 0) {
-            output.innerText = "Please enter a valid delay (in milliseconds).";
+            output.innerText = "";
             return;
         }
 
-        output.innerText = "Waiting...";
+        output.innerText = "";
 
+        // Wait for the specified delay
         await wait(delay);
 
         // Display the message after the delay
